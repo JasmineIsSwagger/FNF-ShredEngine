@@ -103,4 +103,4 @@ _____________________________________
 ## shredboi
 this is shredboi
 say hi to him
-https://cdn.discordapp.com/attachments/978326747630145669/1005899954503561216/unknown.png
+![shredboi](https://cdn.discordapp.com/attachments/978326747630145669/1005899954503561216/unknown.png)
