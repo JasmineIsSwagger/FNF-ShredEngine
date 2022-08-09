@@ -109,7 +109,7 @@ class TitleState extends MusicBeatState
 		#if CHECK_FOR_UPDATES
 		if(!closedState) {
 			trace('checking for update');
-			var http = new haxe.Http("https://raw.githubusercontent.com/ShadowMario/FNF-PsychEngine/main/gitVersion.txt");
+			var http = new haxe.Http("https://github.com/Gabriel2019r/FNF-GabEngine/main/gitVersion.txt");
 			
 			http.onData = function (data:String)
 			{
@@ -117,7 +117,7 @@ class TitleState extends MusicBeatState
 				var curVersion:String = MainMenuState.psychEngineVersion.trim();
 				trace('version online: ' + updateVersion + ', your version: ' + curVersion);
 				if(updateVersion != curVersion) {
-					trace('versions arent matching!');
+					trace('bro your version isnt the same as https://github.com/Gabriel2019r/FNF-GabEngine/main/gitVersion.txt please fucking update');
 					mustUpdate = true;
 				}
 			}
@@ -223,6 +223,12 @@ class TitleState extends MusicBeatState
 	{
 		if (!initialized)
 		{
+			FlxG.camera.zoom = 1.5;
+			FlxG.camera.angle =30;
+			
+			FlxTween.tween(FlxG.camera, {zoom:1}, 0.95, {ease: FlxEase.quadOut});
+			FlxTween.tween(FlxG.camera, {angle:0}, 0.95, {ease: FlxEase.quadOut});
+
 			/*var diamond:FlxGraphic = FlxGraphic.fromClass(GraphicTransTileDiamond);
 			diamond.persist = true;
 			diamond.destroyOnNoUse = false;
@@ -574,20 +580,20 @@ class TitleState extends MusicBeatState
 			switch (sickBeats)
 			{
 				case 1:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Psych Engine by'], 15);
-					#else
+					//#if PSYCH_WATERMARKS
+					createCoolText(['Gab Engine by'], 15);
+					/*#else
 					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-					#end
+					#end*/
 				// credTextShit.visible = true;
 				case 3:
-					#if PSYCH_WATERMARKS
-					addMoreText('Shadow Mario', 15);
-					addMoreText('RiverOaken', 15);
-					addMoreText('shubs', 15);
-					#else
+					//#if PSYCH_WATERMARKS
+					addMoreText('Gabriel2019r', 15);
+					addMoreText('AverageDaveFan65', 15);
+					addMoreText('Aadiyan1', 15);
+					/*#else
 					addMoreText('present');
-					#end
+					#end*/
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
 				case 4:
@@ -596,11 +602,11 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
 				case 5:
-					#if PSYCH_WATERMARKS
+					//#if PSYCH_WATERMARKS
 					createCoolText(['Not associated', 'with'], -40);
-					#else
+					/*#else
 					createCoolText(['In association', 'with'], -40);
-					#end
+					#end*/
 				case 7:
 					addMoreText('newgrounds', -40);
 					ngSpr.visible = true;
@@ -624,15 +630,12 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
 				case 13:
-					addMoreText('Friday');
+					addMoreText('Friday Night Funkin');
 				// credTextShit.visible = true;
 				case 14:
-					addMoreText('Night');
+					addMoreText('Gab Engine');
 				// credTextShit.text += '\nNight';
 				case 15:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
-				case 16:
 					skipIntro();
 			}
 		}
@@ -644,6 +647,23 @@ class TitleState extends MusicBeatState
 	{
 		if (!skippedIntro)
 		{
+			remove(ngSpr);
+
+			FlxG.camera.flash(FlxColor.WHITE, 4);
+			remove(credGroup);
+
+			FlxTween.tween(logoBl,{y: -100}, 1.4, {ease: FlxEase.expoInOut});
+
+			logoBl.angle = -4;
+
+			new FlxTimer().start(0.01, function(tmr:FlxTimer)
+				{
+					if(logoBl.angle == -4) 
+						FlxTween.angle(logoBl, logoBl.angle, 4, 4, {ease: FlxEase.quartInOut});
+					if (logoBl.angle == 4) 
+						FlxTween.angle(logoBl, logoBl.angle, -4, 4, {ease: FlxEase.quartInOut});
+				}, 0);
+
 			if (playJingle) //Ignore deez
 			{
 				var easteregg:String = FlxG.save.data.psychDevsEasterEgg;
