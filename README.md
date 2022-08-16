@@ -7,14 +7,21 @@ please do not reuse the fps.hx code in your engine, if you do, please remove it 
 _____________________________________
 
 ## Installation:
-You must have [the most up-to-date version of Haxe](https://haxe.org/download/), seriously, stop using 4.1.5, it misses some stuff.
+GOTTA HAVE [THE UP-TO-DATE HAXE](https://haxe.org/download/) IF YOU HAVE 4.1.5 THEN IT WILL NOT WORKY
 
-Follow a Friday Night Funkin' source code compilation tutorial, after this you will need to install LuaJIT.
+follow this [convenient tutorial](https://youtu.be/grCip1ATI94), also install LuaJIT.
+do
+```
+haxelib git linc_luajit https://github.com/AndreiRudenko/linc_luajit
+```
+on ur cmd prompt/powershel
 
-To install LuaJIT do this: `haxelib git linc_luajit https://github.com/AndreiRudenko/linc_luajit ` on a Command prompt/PowerShell
+if you dont want ur mod to run lua delete the "LUA_ALLOWED" on project.xml
 
-Otherwise, if you don't want your mod to be able to run .lua scripts, delete the "LUA_ALLOWED" line on Project.xml
-
+also if we ever add something new that requires hxCodec do this on ur powershell/cmd prompt:
+```
+haxelib install hxCodec 2.5.1 
+```
 ## Credits:
 # developers
 * Gab - Coding and Arts

@@ -21,6 +21,7 @@ class ClientPrefs {
 	public static var camZooms:Bool = true;
 	public static var hideHud:Bool = false;
 	public static var advancedUI:Bool = false;
+	public static var DISABLETHEFUCKINGFONTAAAAAAAAAA:Bool = false;
 	public static var noteOffset:Int = 0;
 	public static var arrowHSV:Array<Array<Int>> = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]];
 	public static var imagesPersist:Bool = false;
@@ -33,6 +34,7 @@ class ClientPrefs {
 	public static var controllerMode:Bool = false;
 	public static var hitsoundVolume:Float = 0;
 	public static var pauseMusic:String = 'Tea Time';
+	public static var saveReplay:Bool = true;
 	public static var gameplaySettings:Map<String, Dynamic> = [
 		'scrollspeed' => 1.0,
 		'scrolltype' => 'multiplicative', 
@@ -98,6 +100,7 @@ class ClientPrefs {
 		FlxG.save.data.middleScroll = middleScroll;
 		FlxG.save.data.showFPS = showFPS;
 		FlxG.save.data.advancedUI = advancedUI;
+		FlxG.save.data.DISABLETHEFUCKINGFONTAAAAAAAAAA = DISABLETHEFUCKINGFONTAAAAAAAAAA;
 		FlxG.save.data.flashing = flashing;
 		FlxG.save.data.globalAntialiasing = globalAntialiasing;
 		FlxG.save.data.noteSplashes = noteSplashes;
@@ -130,6 +133,7 @@ class ClientPrefs {
 		FlxG.save.data.controllerMode = controllerMode;
 		FlxG.save.data.hitsoundVolume = hitsoundVolume;
 		FlxG.save.data.pauseMusic = pauseMusic;
+		FlxG.save.data.saveReplay = saveReplay;
 	
 		FlxG.save.flush();
 
@@ -224,6 +228,9 @@ class ClientPrefs {
 		if(FlxG.save.data.advancedUI != null) {
 			advancedUI = FlxG.save.data.advancedUI;
 		}
+		if(FlxG.save.data.DISABLETHEFUCKINGFONTAAAAAAAAAA != null) {
+			DISABLETHEFUCKINGFONTAAAAAAAAAA = FlxG.save.data.DISABLETHEFUCKINGFONTAAAAAAAAAA; //damn take a chill pill - crushernotdrip
+		}
 		if(FlxG.save.data.sickWindow != null) {
 			sickWindow = FlxG.save.data.sickWindow;
 		}
@@ -244,6 +251,9 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.pauseMusic != null) {
 			pauseMusic = FlxG.save.data.pauseMusic;
+		}
+		if(FlxG.save.data.saveReplay != null) {
+			saveReplay = FlxG.save.data.saveReplay;
 		}
 		if(FlxG.save.data.gameplaySettings != null)
 		{
