@@ -82,7 +82,7 @@ class CreditsState extends MusicBeatState
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['Team RE:Ality'],
-			['DragonEdge',                  'edge'      'Director + Created Crysta']
+			['DragonEdge',                  'edge'      'Director + Created Crysta'],
 			['Gab Engine Team'],
 			['GabDoesStuff',		'gab',				'Creator of Gab Engine, main programmer, artist.',  		'https://www.youtube.com/channel/UCnMfn3dNQfRNwQTA2mUrrMw',     'EB2B48'],
 			['AverageDaveLover65',	'average',			'Programmer/Artist/Animator of the engine & Composed Title music.',	'',								'00FF00'], //fuck you cycba
